@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.start{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 52rem;
+}
+
+.press_start{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 50px;
+    font-family: Matrix;
+    border: 3px solid black;
+    width: 20rem;
+    height: 3.5rem;
+    background: lightgray;
+    color: black;
+}
+
+.logo{
+    width: 40rem;
+    position: absolute;
+    left: 26rem;
+    top: 5rem;
+}
+
+.title{
+    position: absolute;
+    font-family: Matrix;
+    font-size: 60px;
+    top: 17rem;
+    left: 30rem;
+    background: black;
+    color: white;
+    width: 30rem;
+    justify-content: center;
+    height: 4rem;
+    align-items: center;
+    display: flex;
+}

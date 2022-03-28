@@ -1,26 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import "./App.css"
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import WelcomePage from './components/WelcomePage/WelcomePage';
+import CardDataBase from './components/CardDataBase/CardDataBase';
+import CardCreator from './components/CardCreator/CardCreator';
+import AboutThisApp from './components/AboutThisApp/AboutThisApp';
+import Landingpage from './components/LandingPage/Landingpage';
 
 function App() {
 
-    const [greeting, setGreeting] = useState('')
+return(
 
-    useEffect(() => {
-        fetch('/api/greeting', {
-            method: 'GET',
-            headers: {
-                'Accept': 'text/plain'
-            }
-        })
-            .then(response => response.text())
-            .then(text => setGreeting(text))
-            .catch(err => setGreeting('Da ist etwas schief gelaufen'));
-    }, []);
+<div>
+    <BrowserRouter>
+    <Routes>
+        <Route path="/" element={<WelcomePage />}/>
+        <Route path="/home" element={<Landingpage />}/>
+        <Route path="/database" element={<CardDataBase />}/>
+        <Route path="/creator" element={<CardCreator />}/>
+        <Route path="/about" element={<AboutThisApp />}/>
+    </Routes>
+    </BrowserRouter>
+</div>
 
-    return (
-        <div>
-            {greeting}
-        </div>
-    );
+
+)
+
 }
 
 export default App;
