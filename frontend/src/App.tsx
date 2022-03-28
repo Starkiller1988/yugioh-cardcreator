@@ -1,6 +1,6 @@
 import React from 'react';
 import "./App.css"
-import { Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import WelcomePage from './components/WelcomePage/WelcomePage';
 import CardDataBase from './components/CardDataBase/CardDataBase';
 import CardCreator from './components/CardCreator/CardCreator';
@@ -12,6 +12,7 @@ function App() {
 return(
 
 <div>
+    <BrowserRouter>
     <Routes>
         <Route path="/" element={<WelcomePage />}/>
         <Route path="/home" element={<Landingpage />}/>
@@ -19,6 +20,7 @@ return(
         <Route path="/creator" element={<CardCreator />}/>
         <Route path="/about" element={<AboutThisApp />}/>
     </Routes>
+    </BrowserRouter>
 </div>
 
 
