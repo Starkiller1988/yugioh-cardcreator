@@ -9,7 +9,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 52rem;
+    position: fixed;
+    top: 25rem;
+    left: 35rem;
 }
 
 .press_start{
@@ -22,8 +24,9 @@
     border: 3px solid black;
     width: 20rem;
     height: 3.5rem;
-    background: lightgray;
+    background: gold;
     color: black;
+    border-radius: 20px;
 }
 
 .logo{
@@ -31,19 +34,4 @@
     position: absolute;
     left: 26rem;
     top: 5rem;
-}
-
-.title{
-    position: absolute;
-    font-family: Matrix;
-    font-size: 60px;
-    top: 17rem;
-    left: 30rem;
-    background: black;
-    color: white;
-    width: 30rem;
-    justify-content: center;
-    height: 4rem;
-    align-items: center;
-    display: flex;
 }
