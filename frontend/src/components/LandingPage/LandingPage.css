@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(../../Media/Images/Hieroglyphs.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navigation{
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-items{
+    text-decoration: none;
+    color: white;
+}
