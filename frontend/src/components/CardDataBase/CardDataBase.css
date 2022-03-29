@@ -1,4 +1,39 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.home-link {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-family: Matrix;
+  border: 3px solid black;
+  width: 10rem;
+  height: 2.5rem;
+  background: gold;
+  color: black;
+  border-radius: 20px;
+}
+
+.monstersearch{
+    position: absolute;
+    left: 38rem;
+    width: 15rem;
+    font-size: 20px;
+    text-align: center;
+}
+
+.monsterBox{
+    display: grid;
+    grid-template-columns: 310px 350px 370px;
+    grid-template-rows: 300px 100px; 
+    column-gap: 100px;
+    row-gap: 150px;
+    align-items: center;
+    text-align: center;
+    margin-top: 5rem;
+    margin-left: 9rem;
 }
