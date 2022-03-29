@@ -55,7 +55,7 @@ useEffect(() => {
         type={monster.type}
         desc={monster.desc}
         race={monster.race}
-        image={monster.card_images [0].image_url_small}/>)
+        image={monster.card_images[0].image_url_small}/>)
         :
         <div>loading...</div>
         }
