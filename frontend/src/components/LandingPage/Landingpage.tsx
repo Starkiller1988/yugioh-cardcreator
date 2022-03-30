@@ -29,7 +29,7 @@ function Landingpage() {
         </Link>
       </div>
       <div>
-        <audio src={yugi} autoPlay />
+        <audio src={yugi} />
       </div>
       <div>
         <img className="yugi-muto" src={yugimuto} alt="" />
