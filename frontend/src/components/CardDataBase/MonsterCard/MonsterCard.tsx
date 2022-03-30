@@ -15,7 +15,6 @@ function MonsterCard(props: MonsterCardProps) {
   return (
     <div className="card">
     <img src={props.image} alt="" className="cardImage"/>
-    <h1 className="cardHeader">{props.name}</h1>
     </div>
   )
 }

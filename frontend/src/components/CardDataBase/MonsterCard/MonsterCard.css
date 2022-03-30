@@ -17,4 +17,13 @@ margin-left: 25px;
 .cardImage{
     display: flex;
     margin: auto;
+    width: 200px;
+    transition: .2s;
 }
+
+.cardImage:hover{
+    -ms-transform: scale(1.8);
+    -webkit-transform: scale(1.8);
+    transform: scale(1.8);
+}
+
