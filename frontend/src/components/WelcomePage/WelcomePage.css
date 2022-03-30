@@ -19,14 +19,19 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 50px;
-    font-family: Matrix;
+    font-size: 32px;
+  font-family: Hieroglyphics;
     border: 3px solid black;
     width: 20rem;
     height: 3.5rem;
     background: gold;
     color: black;
     border-radius: 20px;
+}
+
+.press_start:hover{
+font-family: Matrix;
+font-size: 50px;
 }
 
 .logo{
