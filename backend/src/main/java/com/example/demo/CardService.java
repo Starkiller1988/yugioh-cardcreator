@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -18,7 +19,7 @@ public class CardService {
     }
 
     public Collection<Card> getCards(){
-        return cardRepository.findAll()
+        return cardRepository.findAll(Sort.by("name"))
                 .stream()
                 .sorted()
                 .toList();
