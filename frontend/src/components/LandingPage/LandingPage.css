@@ -121,6 +121,7 @@ body {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   border-radius: 20px;
+
 }
 
 @keyframes fadeInAnimation {
