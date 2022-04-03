@@ -19,10 +19,7 @@ public class CardService {
     }
 
     public Collection<Card> getCards(){
-        return cardRepository.findAll(Sort.by("name"))
-                .stream()
-                .sorted()
-                .toList();
+        return cardRepository.findAll(Sort.by("name"));
     }
 
     public Card getCard(String id){
