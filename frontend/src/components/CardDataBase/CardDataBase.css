@@ -33,12 +33,13 @@
 
 .monsterBox{
     display: grid;
-    grid-template-columns: 310px 350px 370px;
+    grid-template-columns: 350px 350px 350px;
     grid-template-rows: 300px 100px; 
-    column-gap: 100px;
-    row-gap: 150px;
+    column-gap: 185px;
+    row-gap: 170px;
     align-items: center;
     text-align: center;
     margin-top: 5rem;
-    margin-left: 9rem;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
 }

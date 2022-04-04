@@ -42,9 +42,9 @@ body {
   -webkit-animation-name: shimmer;
   -moz-animation-name: shimmer;
   animation-name: shimmer;
-  -webkit-animation-duration: 2s;
-  -moz-animation-duration: 2s;
-  animation-duration: 2s;
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  animation-duration: 3s;
   -webkit-animation-iteration-count: infinite;
   -moz-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
@@ -121,6 +121,7 @@ body {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   border-radius: 20px;
+
 }
 
 @keyframes fadeInAnimation {
