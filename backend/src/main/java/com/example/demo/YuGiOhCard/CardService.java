@@ -1,11 +1,10 @@
-package com.example.demo;
+package com.example.demo.YuGiOhCard;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor

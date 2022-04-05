@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./LandingPage.css";
 import logo from "../../Media/Images/logo.png";
@@ -6,8 +6,14 @@ import yugimuto from "../../Media/Images/yugi-muto.png";
 import setokaiba from "../../Media/Images/seto-kaiba.png";
 //@ts-ignore: Unreachable module error
 import yugi from "../../Media/Sound/intro.mp3";
+import ring from "../../Media/Images/Ring.png";
+import puzzle from "../../Media/Images/Puzzle.png";
 
 function Landingpage() {
+  const dark = () => {
+    document.body.style.backgroundImage = "";
+  };
+
   return (
     <>
       <div>
@@ -29,11 +35,14 @@ function Landingpage() {
         </Link>
       </div>
       <div>
-        <audio src={yugi} autoPlay />
+        <audio src={yugi} autoPlay loop />
       </div>
       <div>
         <img className="yugi-muto" src={yugimuto} alt="" />
         <img className="seto-kaiba" src={setokaiba} alt="" />
+      </div>
+      <div>
+        <img className="millenium-ring" src={ring} alt="" onClick={dark} />
       </div>
     </>
   );

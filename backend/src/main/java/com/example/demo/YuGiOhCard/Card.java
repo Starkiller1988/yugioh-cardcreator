@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.YuGiOhCard;
 
 
 import lombok.Data;
@@ -22,6 +22,4 @@ private String description;
 private int attack;
 private int defence;
 private String image;
-
-
 }
