@@ -6,8 +6,6 @@ import yugimuto from "../../Media/Images/yugi-muto.png";
 import setokaiba from "../../Media/Images/seto-kaiba.png";
 //@ts-ignore: Unreachable module error
 import yugi from "../../Media/Sound/intro.mp3";
-import ring from "../../Media/Images/Ring.png";
-import puzzle from "../../Media/Images/Puzzle.png";
 
 function Landingpage() {
   const dark = () => {
@@ -40,9 +38,6 @@ function Landingpage() {
       <div>
         <img className="yugi-muto" src={yugimuto} alt="" />
         <img className="seto-kaiba" src={setokaiba} alt="" />
-      </div>
-      <div>
-        <img className="millenium-ring" src={ring} alt="" onClick={dark} />
       </div>
     </>
   );

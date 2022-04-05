@@ -152,17 +152,3 @@ font-size: 50px;
   height: 35rem;
 }
 
-.millenium-ring{
-  position: absolute;
-  width: 6rem;
-  display: flex;
-  bottom: 36rem;
-  left: 84rem;
-}
-
-.millienium-ring{
-  background-image: url(../../Media/Images/Dark_Mode.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-}
