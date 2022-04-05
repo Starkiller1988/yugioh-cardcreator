@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./LandingPage.css";
 import logo from "../../Media/Images/logo.png";
@@ -8,9 +8,6 @@ import setokaiba from "../../Media/Images/seto-kaiba.png";
 import yugi from "../../Media/Sound/intro.mp3";
 
 function Landingpage() {
-  const dark = () => {
-    document.body.style.backgroundImage = "";
-  };
 
   return (
     <>
