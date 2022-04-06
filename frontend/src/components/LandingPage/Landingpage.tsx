@@ -8,6 +8,7 @@ import setokaiba from "../../Media/Images/seto-kaiba.png";
 import yugi from "../../Media/Sound/intro.mp3";
 
 function Landingpage() {
+
   return (
     <>
       <div>
@@ -29,7 +30,7 @@ function Landingpage() {
         </Link>
       </div>
       <div>
-        <audio src={yugi} autoPlay />
+        <audio src={yugi} autoPlay loop />
       </div>
       <div>
         <img className="yugi-muto" src={yugimuto} alt="" />

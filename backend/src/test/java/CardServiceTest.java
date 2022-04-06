@@ -1,15 +1,11 @@
-import com.example.demo.Card;
-import com.example.demo.CardRepository;
-import com.example.demo.CardService;
+import com.example.demo.YuGiOhCard.Card;
+import com.example.demo.YuGiOhCard.CardRepository;
+import com.example.demo.YuGiOhCard.CardService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-
-import java.util.Collection;
-import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 public class CardServiceTest {
