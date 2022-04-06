@@ -18,9 +18,9 @@ public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
-    public User createUser(UserCreationData userCreationData){
+    public User createUser(UserCreationData userCreationData) {
         LOGGER.info("trying to create user with username {}", userCreationData.getUsername());
-        if (userCreationDataIsValid(userCreationData)){
+        if (userCreationDataIsValid(userCreationData)) {
             User user = new User(null, userCreationData.getUsername(), passwordEncoder.encode(userCreationData.getPassword()));
             User saved = userRepository.save(user);
             LOGGER.info("created user {} with id {}", userCreationData.getUsername(), saved.getId());
@@ -29,7 +29,7 @@ public class UserService {
         throw new PasswordsDoNotMatchException();
     }
 
-    private boolean userCreationDataIsValid(UserCreationData userCreationData){
+    private boolean userCreationDataIsValid(UserCreationData userCreationData) {
         userRepository.findByUsername(userCreationData.getUsername())
                 .ifPresent(user -> {
                     throw new UserAlreadyExistsException();
@@ -37,7 +37,7 @@ public class UserService {
         return Objects.equals(userCreationData.getPassword(), userCreationData.getPasswordAgain());
     }
 
-    public Optional<User> findByUsername(String username){
+    public Optional<User> findByUsername(String username) {
         return userRepository.findByUsername(username);
     }
 }

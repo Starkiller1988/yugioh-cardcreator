@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 
 @RestController
@@ -26,7 +27,7 @@ public class UserController {
     private final JwtUtils jwtUtils;
 
     @PostMapping
-    public ResponseEntity<String> createUser(@RequestBody UserCreationData userCreationData){
+    public ResponseEntity<String> createUser(@RequestBody UserCreationData userCreationData) {
         LOGGER.info("user with username {} should be created", userCreationData.getUsername());
         try {
             userService.createUser(userCreationData);
@@ -36,14 +37,13 @@ public class UserController {
             LOGGER.info("user with username {} already exists", userCreationData.getUsername());
             return ResponseEntity.status(409).body(e.getMessage());
         } catch (PasswordsDoNotMatchException e) {
-            LOGGER.info("user with username {} did send passwords that did not match", userCreationData.getUsername());
+            LOGGER.info("user with username {} did send paswords that did not match", userCreationData.getUsername());
             return ResponseEntity.badRequest().body(e.getMessage());
         }
-
     }
 
     @PostMapping("/login")
-    public ResponseEntity<Token> login(@RequestBody LoginData loginData){
+    public ResponseEntity<Token> login(@RequestBody LoginData loginData) {
         LOGGER.info("user with username {} tries to log in", loginData.getUsername());
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginData.getUsername(), loginData.getPassword()));
