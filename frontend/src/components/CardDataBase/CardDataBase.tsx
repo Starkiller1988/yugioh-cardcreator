@@ -9,6 +9,7 @@ interface MonsterDetails {
   type: string;
   desc: string;
   race: string;
+  level: string;
   card_images: Array<CardImage>;
 }
 
@@ -60,6 +61,7 @@ function CardDataBase() {
                 name={monster.name}
                 type={monster.type}
                 desc={monster.desc}
+                level={monster.level}
                 race={monster.race}
                 image={monster.card_images[0].image_url}
               />
