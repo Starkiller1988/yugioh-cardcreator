@@ -22,6 +22,6 @@ test('that user cannot login', async () => {
     screen.getByTestId('login-button').click();
 
     await waitFor(() => {
-        expect(screen.getByTestId('error-message').textContent).toEqual('Benutzername oder Passwort sind falsch');
+        expect(screen.getByTestId('error-message').textContent).toEqual('Username or Password are invalid');
     })
 })
