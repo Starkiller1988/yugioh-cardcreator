@@ -10,7 +10,7 @@ import { useAuth } from '../Authentication/AuthProvider';
 
 function WelcomePage() {
 
-  const { token, logout } = useAuth();
+  const { logout } = useAuth();
   
   return (
     <>

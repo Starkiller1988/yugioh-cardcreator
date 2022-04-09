@@ -7,7 +7,6 @@ import CardCreator from './components/CardCreator/CardCreator';
 import AboutThisApp from './components/AboutThisApp/AboutThisApp';
 import Landingpage from './components/LandingPage/Landingpage';
 import RegisterForm from './components/Authentication/RegisterForm';
-import AuthProvider from './components/Authentication/AuthProvider';
 
 
 function App() {
