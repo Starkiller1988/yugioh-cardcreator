@@ -17,8 +17,8 @@ return(
 
 <div>
         <Routes>
-        <Route path="/" element={<RegisterForm />} />
-        <Route path="/login" element={<LoginForm />}/>
+        <Route path="/" element={<LoginForm />} />
+        <Route path="/register" element={<RegisterForm />} />
         <Route path="/welcome" element={<WelcomePage />}/>
         <Route path="/home" element={<Landingpage />}/>
         <Route path="/database" element={<CardDataBase />}/>

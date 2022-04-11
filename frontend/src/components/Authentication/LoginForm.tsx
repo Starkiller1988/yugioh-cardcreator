@@ -31,7 +31,7 @@ function LoginForm() {
                 <button className="input-item" data-testid="login-button" onClick={doLogin}>Login</button>
         </div>
         <div className="register-link">
-        <Link className="reg" to="/">
+        <Link className="reg" to="/register">
         <p>Register</p>
         </Link>
         </div>

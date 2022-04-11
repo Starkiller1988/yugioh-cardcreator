@@ -45,7 +45,7 @@ export default function RegisterForm() {
             <button className="submit-item" onClick={doRegister}>Submit</button>
             </div>
             <div className="login-link">
-            <Link className="reg" to="/login">
+            <Link className="reg" to="/">
             <p>Login</p>
             </Link>
             </div>
