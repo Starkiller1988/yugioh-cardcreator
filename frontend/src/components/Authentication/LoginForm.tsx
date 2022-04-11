@@ -28,7 +28,9 @@ function LoginForm() {
         <div className="input">
                 <input className="input-item" data-testid="login-username" type="text" placeholder="Username" value={loginUsername} onChange={ev => setLoginUsername(ev.target.value)} />
                 <input className="input-item" data-testid="login-password" type="password" placeholder="Passwort" value={loginPassword} onChange={ev => setLoginPassword(ev.target.value)} />
-                <button className="input-item" data-testid="login-button" onClick={doLogin}>Login</button>
+                <label className="input-item" data-testid="login-button" onClick={doLogin}>
+                  <p className="login">Login</p>
+                  </label>
         </div>
         <div className="register-link">
         <Link className="reg" to="/register">

@@ -3,14 +3,9 @@ import { Link } from 'react-router-dom';
 import "./WelcomePage.css";
 import logo from "../../Media/Images/logo.png";
 
-
-
-
-
 function WelcomePage() {
 
-  
-  
+
   return (
     <>
     <div>
