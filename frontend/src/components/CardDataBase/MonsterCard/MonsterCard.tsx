@@ -7,6 +7,7 @@ interface MonsterCardProps{
     name : string;
     type : string;
     desc : string;
+    level: string;
     race : string;
     image: string;
 }
