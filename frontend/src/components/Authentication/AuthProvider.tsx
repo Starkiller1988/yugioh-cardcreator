@@ -17,11 +17,11 @@ export default function AuthProvider({ children }: Param) {
 
   useEffect(() => {
     localStorage.setItem("jwt", token);
-    if (token) {
+   /* if (token) {
       setTimeout(() => navigate("/welcome"));
     } else {
-      setTimeout(() => navigate("/"));
-    }
+      setTimeout(() => navigate("/login"));
+    } */
   }, [token, navigate]);
 
   const register = (
@@ -59,11 +59,13 @@ export default function AuthProvider({ children }: Param) {
         }
         return response.json();
       })
-      .then((token: Token) => setToken(token.token));
+      .then((token: Token) => setToken(token.token))
+      .then(() => navigate("/welcome"));
   };
 
   const logout = () => {
     setToken("");
+    navigate("/login");
   };
 
   return (

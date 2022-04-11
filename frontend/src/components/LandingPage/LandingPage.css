@@ -152,3 +152,18 @@ font-size: 50px;
   height: 35rem;
 }
 
+.logmeout{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 32px;
+font-family: Matrix;
+position: absolute;
+  border: 3px solid black;
+  width: 15rem;
+  height: 3rem;
+  background: gold;
+  color: black;
+  border-radius: 20px;
+}
