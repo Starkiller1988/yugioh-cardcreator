@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+  position: absolute;
+  left: 35rem;
+  top: 23rem;
+  gap: 5px;
+}
+
+.input-item {
+  font-size: 32px;
+  font-family: Matrix;
+  border: 3px solid black;
+  width: 20rem;
+  height: 3.5rem;
+  background: gold;
+  color: black;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.register-link {
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+  position: absolute;
+  left: 35rem;
+  top: 36rem;
+  gap: 5px;
+  font-size: 32px;
+  font-family: Matrix;
+  border: 3px solid black;
+  width: 20rem;
+  height: 3.5rem;
+  background: gold;
+  color: black;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.login-link {
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+  position: absolute;
+  left: 35rem;
+  top: 39.5rem;
+  gap: 5px;
+  font-size: 28px;
+  font-family: Matrix;
+  border: 3px solid black;
+  width: 20rem;
+  height: 3rem;
+  background: gold;
+  color: black;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.submit{
+    display: flex;
+    position: absolute;
+    left: 35rem;
+    top: 35.6rem;
+}
+
+.submit-item{
+    font-size: 32px;
+  font-family: Matrix;
+  border: 3px solid black;
+  width: 20.3rem;
+  height: 3.5rem;
+  background: gold;
+  color: black;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.reg {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  margin: auto;
+}
+
+.error {
+  color: red;
+  width: 30rem;
+  display: flex;
+  margin: auto;
+  margin-top: 10px;
+  font-family: Matrix;
+  font-size: 32px;
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.errortext {
+  display: flex;
+  margin: auto;
+}
+
+.login{
+  display: flex;
+  position: absolute;
+  left: 8rem;
+  top: 9.5rem;
+}

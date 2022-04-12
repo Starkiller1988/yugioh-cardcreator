@@ -6,11 +6,17 @@ import yugimuto from "../../Media/Images/yugi-muto.png";
 import setokaiba from "../../Media/Images/seto-kaiba.png";
 //@ts-ignore: Unreachable module error
 import yugi from "../../Media/Sound/intro.mp3";
+import { useAuth } from '../Authentication/AuthProvider';
 
 function Landingpage() {
 
+  const { logout } = useAuth();
+
   return (
     <>
+    <div>
+      <button className="logmeout" onClick={() => logout()} >Logout</button>
+    </div>
       <div>
         <img src={logo} alt="logo" className="logo" />
       </div>
