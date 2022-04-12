@@ -36,7 +36,7 @@ public class UserController {
             LOGGER.info("user with username {} already exists", userCreationData.getUsername());
             return ResponseEntity.status(409).body(e.getMessage());
         } catch (PasswordsDoNotMatchException e) {
-            LOGGER.info("user with username {} did send paswords that did not match", userCreationData.getUsername());
+            LOGGER.info("user with username {} did send passwords that did not match", userCreationData.getUsername());
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
