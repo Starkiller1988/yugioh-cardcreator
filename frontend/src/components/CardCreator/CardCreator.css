@@ -2,3 +2,209 @@
     margin: 0;
     padding: 0;
 }
+
+.title_cardcreator{
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    position: absolute;
+    left: 55rem;
+    bottom: 36rem;
+    color: gold;
+    font-size: 40px;
+}
+
+.card-container{
+    height: 40rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-right: 30rem;
+    background-color: rgba(0,0,0,0.7);
+    width: 100%;
+}
+
+.card{
+    display: flex;
+    position: relative;
+    right: 20rem;
+    height: 35rem;
+    top: 40px;
+}
+
+.inputfield{
+    display: flex;
+    position: absolute;
+    left: 55rem;
+    top: 8rem;
+}
+
+.input-items{
+    width: 25rem;
+    font-size: 30px;
+    font-family: Matrix;
+    text-align: center;
+}
+
+.level{
+    display: flex;
+    position: absolute;
+    top: 50px;
+    left: 6.5rem;
+    width: 3rem;
+    height: 30px;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.level-text{
+    color: white;
+    position: absolute;
+    top: 52px;
+    font-size: 20px;
+    left: 10px;
+}
+
+.descript-text{
+    width: 25rem;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    position: absolute;
+    top: 20rem;
+    height: 10rem;
+}
+
+.attribute-text{
+    color: white;
+    position: absolute;
+    top: 6.2rem;
+    font-size: 20px;
+    left: 10px;
+}
+
+.attribute-container{
+    display: flex;
+    position: absolute;
+    top: 6rem;
+    left: 7rem;
+    gap: 10px;
+}
+
+.attribute-container-2{
+    display: flex;
+    position: absolute;
+    top: 9rem;
+    left: 7rem;
+    gap: 10px;
+}
+
+.attribute-img{
+display: flex;
+height: 30px;
+}
+
+.btn{
+    border-radius: 15px;
+}
+
+.race-text{
+    color: white;
+    position: absolute;
+    top: 52px;
+    font-size: 20px;
+    left: 13rem;
+}
+
+.race{
+    display: flex;
+    position: absolute;
+    top: 50px;
+    left: 17rem;
+    width: 7.5rem;
+    height: 30px;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.type-text{
+    color: white;
+    position: absolute;
+    top: 13rem;
+    font-size: 20px;
+    left: 10px;
+}
+
+.type{
+    display: flex;
+    position: absolute;
+    top: 12.8rem;
+    left: 4.2rem;
+    width: 7rem;
+    height: 30px;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.attack-text{
+    color: white;
+    position: absolute;
+    top: 16.4rem;
+    font-size: 20px;
+    left: 10px;
+}
+
+.attack{
+    display: flex;
+    position: absolute;
+    top: 16rem;
+    left: 4rem;
+    width: 7rem;
+    height: 30px;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.defence-text{
+    color: white;
+    position: absolute;
+    top: 16.4rem;
+    font-size: 20px;
+    left: 13rem;
+}
+
+.defence{
+    display: flex;
+    position: absolute;
+    top: 16rem;
+    left: 16.3rem;
+    width: 7rem;
+    height: 30px;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.upload-text{
+    color: white;
+    position: absolute;
+    top: 32rem;
+    font-size: 20px;
+    left: 10px;
+}
+
+.upload{
+    display: flex;
+    position: absolute;
+    top: 32rem;
+    left: 5rem;
+    width: 20rem;
+    height: 30px;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+}

@@ -17,11 +17,6 @@ export default function AuthProvider({ children }: Param) {
 
   useEffect(() => {
     localStorage.setItem("jwt", token);
-   /* if (token) {
-      setTimeout(() => navigate("/welcome"));
-    } else {
-      setTimeout(() => navigate("/login"));
-    } */
   }, [token, navigate]);
 
   const register = (
