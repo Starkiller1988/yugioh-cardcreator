@@ -24,7 +24,7 @@
     width: 100%;
 }
 
-.card{
+.card_img{
     display: flex;
     position: relative;
     right: 20rem;
@@ -68,8 +68,8 @@
 
 .descript-text{
     width: 25rem;
-    font-size: 20px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+    font-family:Arial, Helvetica, sans-serif;
     display: flex;
     position: absolute;
     top: 20rem;
@@ -192,7 +192,7 @@ height: 30px;
 .upload-text{
     color: white;
     position: absolute;
-    top: 32rem;
+    top: 31.9rem;
     font-size: 20px;
     left: 10px;
 }
@@ -206,5 +206,92 @@ height: 30px;
     height: 30px;
     text-align: center;
     font-size: 15px;
+    color: white;
+}
+
+.star-container{
+    display: flex;
+    height: 24px;
+    flex-direction: row-reverse;
+    position: absolute;
+    right: 55rem;
+    top: 12.7rem;
+    z-index: 1;
+}
+
+.star{
+    display: flex;
+    border-radius: 20px;
+}
+
+.attribute_card{
+    display: flex;
+    position: absolute;
+    height: 36px;
+    border-radius: 30px;
+    top: 9.5rem;
+    left: 32rem;
+    z-index: 1;
+}
+
+.race-container{
+    display: flex;
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    font-family: Matrix;
+    font-size: 16px;
+    left: 15rem;
+    top: 36.3rem;
+    z-index: 1;
+}
+
+.name-container{
+    display: flex;
+    position: absolute;
+    font-family: Matrix;
+    font-size: 26px;
+    left: 15rem;
+    top: 10.1rem;
+    z-index: 1;
+    width: 30%;
+    text-align: justify;
+    color: gold;
+    letter-spacing: -1px;
+}
+
+.desc-container{
+    display: flex;
+    position: absolute;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    top: 37.2rem;
+    left: 15rem;
+    width: 197px;
+    height: 40px;
+    overflow: auto;
+    text-align: start;
+    letter-spacing: -1;
+    font-size: 11px;
+}
+
+.attack-container{
+    display: flex;
+    position: absolute;
+    font-family:'Courier New', Courier,;
+    top: 36.2rem ;
+    left: 31rem ;
+    z-index: 1;
+    font-size: 25px;
+    color: white;
+}
+
+.defence-container{
+    display: flex;
+    position: absolute;
+    font-family:'Courier New', Courier,;
+    top: 38rem ;
+    left: 31rem ;
+    z-index: 1;
+    font-size: 25px;
     color: white;
 }
