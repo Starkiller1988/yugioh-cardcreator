@@ -3,6 +3,13 @@
   padding: 0;
 }
 
+.carddatabase-container{
+  background-color: rgba(0,0,0,0.5);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .home-link {
   display: flex;
   text-decoration: none;
@@ -41,5 +48,4 @@
     text-align: center;
     margin-top: 5rem;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
 }

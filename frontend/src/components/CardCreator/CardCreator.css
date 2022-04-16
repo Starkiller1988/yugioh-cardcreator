@@ -3,6 +3,13 @@
     padding: 0;
 }
 
+.body-container{
+    background-color: rgba(0,0,0,0.5);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .title_cardcreator{
     display: flex;
     justify-content: center;
@@ -14,29 +21,38 @@
     font-size: 40px;
 }
 
-.card-container{
-    height: 40rem;
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-    margin-right: 30rem;
-    background-color: rgba(0,0,0,0.7);
-    width: 100%;
+.cardtype-text{
+    color: white;
+    position: absolute;
+    top: 9.2rem;
+    font-size: 20px;
+    left: 10px;
 }
 
-.card_img{
+.cardtype-array{
     display: flex;
-    position: relative;
-    right: 20rem;
-    height: 35rem;
-    top: 40px;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 9rem;
+    left: 7rem;
+    gap: 25px;
+}
+
+.cardtype-container{
+    display: flex;
+    position: absolute;
+    height: 34.5rem;
+    top: 6.5rem;
+    left: 13rem;
+    background-color: rgba(0,0,0,1);
 }
 
 .inputfield{
     display: flex;
     position: absolute;
     left: 55rem;
-    top: 8rem;
+    top: 7rem;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .input-items{
@@ -86,23 +102,16 @@
 
 .attribute-container{
     display: flex;
+    flex-wrap: wrap;
     position: absolute;
     top: 6rem;
     left: 7rem;
     gap: 10px;
 }
 
-.attribute-container-2{
-    display: flex;
-    position: absolute;
-    top: 9rem;
-    left: 7rem;
-    gap: 10px;
-}
-
 .attribute-img{
 display: flex;
-height: 30px;
+height: 25px;
 }
 
 .btn{
@@ -214,8 +223,8 @@ height: 30px;
     height: 24px;
     flex-direction: row-reverse;
     position: absolute;
-    right: 55rem;
-    top: 12.7rem;
+    right: 55.5rem;
+    top: 11.8rem;
     z-index: 1;
 }
 
@@ -229,7 +238,7 @@ height: 30px;
     position: absolute;
     height: 36px;
     border-radius: 30px;
-    top: 9.5rem;
+    top: 8.7rem;
     left: 32rem;
     z-index: 1;
 }
@@ -241,8 +250,8 @@ height: 30px;
     font-weight: bold;
     font-family: Matrix;
     font-size: 16px;
-    left: 15rem;
-    top: 36.3rem;
+    left: 15.5rem;
+    top: 35.3rem;
     z-index: 1;
 }
 
@@ -251,8 +260,8 @@ height: 30px;
     position: absolute;
     font-family: Matrix;
     font-size: 26px;
-    left: 15rem;
-    top: 10.1rem;
+    left: 15.5rem;
+    top: 9.3rem;
     z-index: 1;
     width: 30%;
     text-align: justify;
@@ -264,8 +273,8 @@ height: 30px;
     display: flex;
     position: absolute;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    top: 37.2rem;
-    left: 15rem;
+    top: 36.2rem;
+    left: 15.5rem;
     width: 197px;
     height: 40px;
     overflow: auto;
@@ -278,8 +287,8 @@ height: 30px;
     display: flex;
     position: absolute;
     font-family:'Courier New', Courier,;
-    top: 36.2rem ;
-    left: 30.5rem ;
+    top: 35rem ;
+    left: 31rem ;
     z-index: 1;
     font-size: 25px;
     color: white;
@@ -289,8 +298,8 @@ height: 30px;
     display: flex;
     position: absolute;
     font-family:'Courier New', Courier,;
-    top: 38rem ;
-    left: 30.5rem ;
+    top: 36.8rem ;
+    left: 31rem ;
     z-index: 1;
     font-size: 25px;
     color: white;
