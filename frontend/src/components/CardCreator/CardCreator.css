@@ -86,10 +86,12 @@
 
 .attribute-container{
     display: flex;
+    flex-wrap: wrap;
     position: absolute;
     top: 6rem;
     left: 7rem;
     gap: 10px;
+
 }
 
 .attribute-container-2{

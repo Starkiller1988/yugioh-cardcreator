@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { nanoid } from "nanoid";
 import "./CardCreator.css";
+import { createArrayWithIds } from "../../utils/array";
 
 import normalCard from "../../Media/Cardimages/common.png";
 import effectCard from "../../Media/Cardimages/effect.png";
@@ -22,14 +24,10 @@ import levelstar1 from "../../Media/Level/levelstar.png";
 const attributes = [dark, light, divine, earth, fire, wind, water];
 
 function CardCreator() {
-
-  const [showedStars, setShowedStars] = useState(
-    <div className="star-container"></div>
-  );
-
+  const [showedStars, setShowedStars] = useState<{ id: string }[]>([]);
 
   const [showedRace, setShowedRace] = useState(<div></div>);
-  const [showedAttribute, setShowedAttribute] = useState([<img src="../../Media/Attributes/"/>]);
+  const [showedAttribute, setShowedAttribute] = useState<string | undefined>();
   const [showedType, setShowedType] = useState(<div></div>);
   const [showedCard, setShowedCard] = useState(
     <div className="card-container">
@@ -41,8 +39,8 @@ function CardCreator() {
   const [attack, setAttack] = useState("");
   const [defence, setDefence] = useState("");
 
-  const changeAttribute = () => {
-    setShowedAttribute([]);
+  const changeAttribute = (src: string) => {
+    setShowedAttribute(src);
   };
 
   const changeType = (types: string) => {
@@ -54,148 +52,7 @@ function CardCreator() {
   };
 
   const changeLevel = (stars: number) => {
-    if (stars === 1) {
-      setShowedStars(
-        <div className="star-container">
-          <img className="star" src={levelstar1} alt="" />
-        </div>
-      );
-    } else if (stars === 2) {
-      setShowedStars(
-        <div className="star-container">
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-        </div> );
-    } else if (stars === 3) {
-      setShowedStars(
-        <div className="star-container">
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-        </div>
-      );
-    } else if (stars === 4) {
-      setShowedStars(
-        <div className="star-container">
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-        </div>
-      );
-    } else if (stars === 5) {
-      setShowedStars(
-        <div className="star-container">
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-        </div>
-      );
-    } else if (stars === 6) {
-      setShowedStars(
-        <div className="star-container">
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-        </div>
-      );
-    } else if (stars === 7) {
-      setShowedStars(
-        <div className="star-container">
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-        </div>
-      );
-    } else if (stars === 8) {
-      setShowedStars(
-        <div className="star-container">
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-        </div>
-      );
-    } else if (stars === 9) {
-      setShowedStars(
-        <div className="star-container">
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-        </div>
-      );
-    } else if (stars === 10) {
-      setShowedStars(
-        <div className="star-container">
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-        </div>
-      );
-    } else if (stars === 11) {
-      setShowedStars(
-        <div className="star-container">
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-        </div>
-      );
-    } else if (stars === 12) {
-      setShowedStars(
-        <div className="star-container">
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-          <img className="star" src={levelstar1} alt="" />
-        </div>
-      );
-    } else if (stars === 0) {
-      setShowedStars(<div></div>);
-    }
-
- 
+    setShowedStars(createArrayWithIds(stars));
   };
 
   return (
@@ -204,9 +61,17 @@ function CardCreator() {
         Home
       </Link>
 
-      <div className="attribute_card">{showedAttribute}</div>
+      <div className="attribute_card">
+        {showedAttribute && (
+          <img src={showedAttribute} alt="character Attribute" />
+        )}
+      </div>
 
-      <div>{showedStars}</div>
+      <div className="star-container">
+        {showedStars.map((star) => {
+          return <img key={star.id} className="star" src={levelstar1} alt="" />;
+        })}
+      </div>
 
       <div className="name-container">{name}</div>
 
@@ -249,32 +114,20 @@ function CardCreator() {
 
         <label className="attribute-text">Attribute:</label>
         <div className="attribute-container">
-          <button onClick={changeAttribute} className="btn">
-            <img src={dark} alt="" className="attribute-img" />
-          </button>
-          <button onClick={changeAttribute} className="btn">
-            <img src={light} alt="" className="attribute-img" />
-          </button>
-          <button onClick={changeAttribute} className="btn">
-            <img src={divine} alt="" className="attribute-img" />
-          </button>
-          <button onClick={changeAttribute} className="btn">
-            <img src={earth} alt="" className="attribute-img" />
-          </button>
-          <button onClick={changeAttribute} className="btn">
-            <img src={fire} alt="" className="attribute-img" />
-          </button>
+          {attributes.map((attribute) => {
+            return (
+              <button
+                key={attribute}
+                className="btn"
+                onClick={() => {
+                  changeAttribute(attribute);
+                }}
+              >
+                <img src={attribute} alt="" className="attribute-img" />
+              </button>
+            );
+          })}
         </div>
-
-        <div className="attribute-container-2">
-          <button onClick={changeAttribute} className="btn">
-            <img src={water} alt="" className="attribute-img" />
-          </button>
-          <button onClick={changeAttribute} className="btn">
-            <img src={wind} alt="" className="attribute-img" />
-          </button>
-        </div>
-
         <div>
           <label className="race-text">Race:</label>
           <select
@@ -360,6 +213,6 @@ function CardCreator() {
       <div className="desc-container">{description}</div>
     </>
   );
-  }
+}
 
 export default CardCreator;
