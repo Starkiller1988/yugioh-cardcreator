@@ -60,7 +60,7 @@ function CardCreator() {
   };
 
   const changeLevel = (stars: number) => {
-    if (showedCard != xyzCard)
+    if (showedCard !== xyzCard)
     setShowedStars(createArrayWithIds(stars));
   };
 
