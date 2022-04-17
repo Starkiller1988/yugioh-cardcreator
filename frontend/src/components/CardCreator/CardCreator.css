@@ -83,6 +83,30 @@ background-color: rgba(0,0,0,0.5);
     left: 10px;
 }
 
+
+
+.xyzlevel-text{
+    color: white;
+    position: absolute;
+    top: 52px;
+    font-size: 20px;
+    left: 13rem;
+}
+
+.xyzLevel{
+    display: flex;
+    position: absolute;
+    top: 50px;
+    left: 20.5rem;
+    width: 3rem;
+    height: 30px;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+
+
 .descript-text{
     width: 25rem;
     font-size: 15px;
@@ -122,7 +146,7 @@ height: 25px;
 .race-text{
     color: white;
     position: absolute;
-    top: 52px;
+    top: 13rem;
     font-size: 20px;
     left: 13rem;
 }
@@ -130,8 +154,8 @@ height: 25px;
 .race{
     display: flex;
     position: absolute;
-    top: 50px;
-    left: 17rem;
+    top: 12.8rem;
+    left: 16.3rem;
     width: 7.5rem;
     height: 30px;
     text-align: center;
@@ -221,15 +245,33 @@ height: 25px;
 
 .star-container{
     display: flex;
-    height: 24px;
+    height: 23px;
     flex-direction: row-reverse;
     position: absolute;
-    right: 54.6rem;
+    right: 55rem;
     top: 11.8rem;
     z-index: 1;
+
+}
+
+.star-container2{
+    display: flex;
+    height: 24px;
+    flex-direction: row;
+    width: 10rem;
+    position: absolute;
+    right: 63.5rem;
+    top: 11.8rem;
+    z-index: 1;
+    gap: 0.5px;
 }
 
 .star{
+    display: flex;
+    border-radius: 20px;
+}
+
+.star2{
     display: flex;
     border-radius: 20px;
 }
@@ -306,3 +348,4 @@ height: 25px;
     color: white;
     letter-spacing: 1;
 }
+

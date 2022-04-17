@@ -19,13 +19,21 @@ import water from "../../Media/Attributes/WATER.png";
 import wind from "../../Media/Attributes/WIND.png";
 
 import levelstar1 from "../../Media/Level/levelstar.png";
+import levelstar2 from "../../Media/Level/levelstar2.png";
 
 const attributes = [dark, light, divine, earth, fire, wind, water];
-const cardtypes = [normalCard, effectCard, fusionCard, ritualCard, synchroCard, xyzCard];
+const cardtypes = [
+  normalCard,
+  effectCard,
+  fusionCard,
+  ritualCard,
+  synchroCard,
+  xyzCard,
+];
 
 function CardCreator() {
   const [showedStars, setShowedStars] = useState<{ id: string }[]>([]);
-
+  const [xyzStars, setXyzStars] = useState<{ id: string }[]>([]);
   const [showedRace, setShowedRace] = useState(<div></div>);
   const [showedAttribute, setShowedAttribute] = useState<string | undefined>();
   const [showedType, setShowedType] = useState(<div></div>);
@@ -45,22 +53,27 @@ function CardCreator() {
 
   const changeCard = (card: string) => {
     setShowedCard(card);
-  }
+  };
 
   const changeRace = (races: string) => {
     setShowedRace(<div>{races}</div>);
   };
 
   const changeLevel = (stars: number) => {
+    if (showedCard != xyzCard)
     setShowedStars(createArrayWithIds(stars));
   };
 
+  const changeXyzLevel = (xyzlevel: number) => {
+    if (showedCard === xyzCard) {
+      setXyzStars(createArrayWithIds(xyzlevel));
+    }
+  };
   return (
     <div className="body-container">
       <Link to="/home" className="home-link">
         Home
       </Link>
-
 
       <div className="attribute_card">
         {showedAttribute && (
@@ -69,13 +82,20 @@ function CardCreator() {
       </div>
 
       <div className="cardtype-container">
-        {showedCard && (
-          <img src={showedCard} alt="character Card" />
-        )}</div>
+        {showedCard && <img src={showedCard} alt="character Card" />}
+      </div>
 
       <div className="star-container">
         {showedStars.map((star) => {
           return <img key={star.id} className="star" src={levelstar1} alt="" />;
+        })}
+      </div>
+
+      <div className="star-container2">
+        {xyzStars.map((star2) => {
+          return (
+            <img key={star2.id} className="star2" src={levelstar2} alt="" />
+          );
         })}
       </div>
 
@@ -116,6 +136,28 @@ function CardCreator() {
           <option>10</option>
           <option>11</option>
           <option>12</option>
+        </select>
+
+        <label className="xyzlevel-text">Xyz-Level:</label>
+        <select
+          onChange={(e) => changeXyzLevel(parseInt(e.target.value))}
+          name="xyzlevel"
+          className="xyzLevel"
+        >
+          <option>0</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+
         </select>
 
         <label className="attribute-text">Attribute:</label>
@@ -184,9 +226,8 @@ function CardCreator() {
           </select>
         </div>
 
-        
-          <label className="cardtype-text" >CardType:</label>
-          <div className="cardtype-array">
+        <label className="cardtype-text">CardType:</label>
+        <div className="cardtype-array">
           {cardtypes.map((cardtypes) => {
             return (
               <button
