@@ -3,6 +3,14 @@
     padding: 0;
 }
 
+.body-container{
+background-color: rgba(0,0,0,0.5);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 44rem;
+}
+
 .title_cardcreator{
     display: flex;
     justify-content: center;
@@ -14,29 +22,38 @@
     font-size: 40px;
 }
 
-.card-container{
-    height: 40rem;
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-    margin-right: 30rem;
-    background-color: rgba(0,0,0,0.7);
-    width: 100%;
+.cardtype-text{
+    color: white;
+    position: absolute;
+    top: 9.2rem;
+    font-size: 20px;
+    left: 10px;
 }
 
-.card{
+.cardtype-array{
     display: flex;
-    position: relative;
-    right: 20rem;
-    height: 35rem;
-    top: 40px;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 9rem;
+    left: 7rem;
+    gap: 25px;
+}
+
+.cardtype-container{
+    display: flex;
+    position: absolute;
+    height: 34.5rem;
+    top: 6.5rem;
+    left: 13rem;
+    background-color: rgba(0,0,0,1);
 }
 
 .inputfield{
     display: flex;
     position: absolute;
     left: 55rem;
-    top: 8rem;
+    top: 7rem;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .input-items{
@@ -66,10 +83,34 @@
     left: 10px;
 }
 
+
+
+.xyzlevel-text{
+    color: white;
+    position: absolute;
+    top: 52px;
+    font-size: 20px;
+    left: 13rem;
+}
+
+.xyzLevel{
+    display: flex;
+    position: absolute;
+    top: 50px;
+    left: 20.5rem;
+    width: 3rem;
+    height: 30px;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+
+
 .descript-text{
     width: 25rem;
-    font-size: 20px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+    font-family:Arial, Helvetica, sans-serif;
     display: flex;
     position: absolute;
     top: 20rem;
@@ -86,23 +127,16 @@
 
 .attribute-container{
     display: flex;
+    flex-wrap: wrap;
     position: absolute;
     top: 6rem;
     left: 7rem;
     gap: 10px;
 }
 
-.attribute-container-2{
-    display: flex;
-    position: absolute;
-    top: 9rem;
-    left: 7rem;
-    gap: 10px;
-}
-
 .attribute-img{
 display: flex;
-height: 30px;
+height: 25px;
 }
 
 .btn{
@@ -112,7 +146,7 @@ height: 30px;
 .race-text{
     color: white;
     position: absolute;
-    top: 52px;
+    top: 13rem;
     font-size: 20px;
     left: 13rem;
 }
@@ -120,8 +154,8 @@ height: 30px;
 .race{
     display: flex;
     position: absolute;
-    top: 50px;
-    left: 17rem;
+    top: 12.8rem;
+    left: 16.3rem;
     width: 7.5rem;
     height: 30px;
     text-align: center;
@@ -192,7 +226,7 @@ height: 30px;
 .upload-text{
     color: white;
     position: absolute;
-    top: 32rem;
+    top: 31.9rem;
     font-size: 20px;
     left: 10px;
 }
@@ -208,3 +242,110 @@ height: 30px;
     font-size: 15px;
     color: white;
 }
+
+.star-container{
+    display: flex;
+    height: 23px;
+    flex-direction: row-reverse;
+    position: absolute;
+    right: 55rem;
+    top: 11.8rem;
+    z-index: 1;
+
+}
+
+.star-container2{
+    display: flex;
+    height: 24px;
+    flex-direction: row;
+    width: 10rem;
+    position: absolute;
+    right: 63.5rem;
+    top: 11.8rem;
+    z-index: 1;
+    gap: 0.5px;
+}
+
+.star{
+    display: flex;
+    border-radius: 20px;
+}
+
+.star2{
+    display: flex;
+    border-radius: 20px;
+}
+
+.attribute_card{
+    display: flex;
+    position: absolute;
+    height: 36px;
+    border-radius: 30px;
+    top: 8.7rem;
+    left: 32rem;
+    z-index: 1;
+}
+
+.race-container{
+    display: flex;
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    font-family: Matrix;
+    font-size: 16px;
+    left: 15.5rem;
+    top: 35.3rem;
+    z-index: 1;
+}
+
+.name-container{
+    display: flex;
+    position: absolute;
+    font-family: Matrix;
+    font-size: 26px;
+    left: 15.5rem;
+    top: 9.3rem;
+    z-index: 1;
+    width: 30%;
+    text-align: justify;
+    color: gold;
+    letter-spacing: -1px;
+}
+
+.desc-container{
+    display: flex;
+    position: absolute;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    top: 36.2rem;
+    left: 15.5rem;
+    width: 197px;
+    height: 40px;
+    overflow: auto;
+    text-align: start;
+    letter-spacing: -1;
+    font-size: 11px;
+}
+
+.attack-container{
+    display: flex;
+    position: absolute;
+    font-family:'Courier New', Courier,;
+    top: 35rem ;
+    left: 31rem ;
+    z-index: 1;
+    font-size: 25px;
+    color: white;
+}
+
+.defence-container{
+    display: flex;
+    position: absolute;
+    font-family:'Courier New', Courier,;
+    top: 36.8rem ;
+    left: 31rem ;
+    z-index: 1;
+    font-size: 25px;
+    color: white;
+    letter-spacing: 1;
+}
+

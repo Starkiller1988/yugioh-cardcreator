@@ -32,7 +32,7 @@ function CardDataBase() {
   }, []);
 
   return (
-    <>
+    <div className="carddatabase-container">
       <div>
         <Link to="/home" className="home-link">
           Home
@@ -70,7 +70,7 @@ function CardDataBase() {
           <div>loading...</div>
         )}
       </div>
-    </>
+    </div>
   );
 }
 
