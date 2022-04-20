@@ -36,12 +36,15 @@ function CardCreator() {
   const [xyzStars, setXyzStars] = useState<{ id: string }[]>([]);
   const [showedRace, setShowedRace] = useState(<div></div>);
   const [showedAttribute, setShowedAttribute] = useState<string | undefined>();
-  const [showedType, setShowedType] = useState(<div></div>);
-  const [showedCard, setShowedCard] = useState<string | undefined>();
+  const [showedType, setShowedType] = useState(<div>Normal</div>);
+  const [showedCard, setShowedCard] = useState<string | undefined>(normalCard);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [attack, setAttack] = useState("");
   const [defence, setDefence] = useState("");
+  const [img, setImg] = useState({} as File);
+  const [url, setUrl] = useState('');
+
 
   const changeAttribute = (src: string) => {
     setShowedAttribute(src);
@@ -60,8 +63,7 @@ function CardCreator() {
   };
 
   const changeLevel = (stars: number) => {
-    if (showedCard !== xyzCard)
-    setShowedStars(createArrayWithIds(stars));
+    if (showedCard !== xyzCard) setShowedStars(createArrayWithIds(stars));
   };
 
   const changeXyzLevel = (xyzlevel: number) => {
@@ -69,6 +71,20 @@ function CardCreator() {
       setXyzStars(createArrayWithIds(xyzlevel));
     }
   };
+
+  const performFileUpload = () => {
+    const formData = new FormData()
+    formData.append('file', img)
+    formData.append('upload_preset', 'yugioh-cardcreator')
+
+    fetch('https://api.cloudinary.com/v1_1/yugioh-cardcreator/image/upload',{
+        method: 'POST',
+        body: formData
+    })
+        .then(response => response.json())
+        .then(data => setUrl(data.secure_url))
+}
+  
   return (
     <div className="body-container">
       <Link to="/home" className="home-link">
@@ -157,7 +173,6 @@ function CardCreator() {
           <option>10</option>
           <option>11</option>
           <option>12</option>
-
         </select>
 
         <label className="attribute-text">Attribute:</label>
@@ -269,11 +284,30 @@ function CardCreator() {
 
         <div>
           <label className="upload-text">Image:</label>
-          <input type="file" className="upload" />
+          <input className="upload" type="file" onChange={ev => {
+            if(ev.target.files!=null){
+                setImg(ev.target.files[0]);
+            }
+        }}/>
         </div>
+
+        <div className='uploadButton'>{img.size>0 && <button onClick={performFileUpload} >Upload Image</button>}</div>
       </div>
 
       <div className="desc-container">{description}</div>
+
+      <div >
+      {url && <img className="monsterImage" src={url} alt="uploaded pic"/>}
+      </div>
+
+
+      <div>
+        <button>Save</button>
+      </div>
+
+      <div>
+        <button>Submit</button>
+      </div>
     </div>
   );
 }

@@ -45,7 +45,7 @@ background-color: rgba(0,0,0,0.5);
     height: 34.5rem;
     top: 6.5rem;
     left: 13rem;
-    background-color: rgba(0,0,0,1);
+    
 }
 
 .inputfield{
@@ -349,3 +349,19 @@ height: 25px;
     letter-spacing: 1;
 }
 
+.uploadButton{
+display: flex;
+position: absolute;
+top: 34rem;
+height: 24px;
+left: 5rem;
+}
+
+.monsterImage{
+    display: flex;
+    height: 18.36rem;
+    position: absolute;
+    top: 14.6rem;
+    left: 16.5rem;
+    width: 16.65rem;
+}
