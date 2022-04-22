@@ -1,4 +1,4 @@
-import com.example.demo.YuGiOhCard.Card;
+import com.example.demo.YuGiOhCard.YugiohCard;
 import com.example.demo.YuGiOhCard.CardRepository;
 import com.example.demo.YuGiOhCard.CardService;
 import org.junit.jupiter.api.Test;
@@ -13,15 +13,15 @@ public class CardServiceTest {
     @Test
     void shouldAddNewCard(){
 
-        Card card1 = new Card();
+        YugiohCard card1 = new YugiohCard();
         card1.setName("Blue-Eyes Dark Dragon");
         card1.setAttribute("Dark");
-        card1.setLevel(12);
+        card1.setNormalLevel(12);
         card1.setType("Effect Monster");
         card1.setRace("Dragon");
         card1.setDescription("Hahahahahaha");
-        card1.setAttack(3000);
-        card1.setDefence(2500);
+        card1.setAttack("3000");
+        card1.setDefence("2500");
         card1.setImage("https://i.pinimg.com/originals/e5/3e/5c/e53e5cda7e26ef3569277b41e48cbda0.jpg");
 
         CardRepository repository = Mockito.mock(CardRepository.class);
@@ -37,15 +37,15 @@ public class CardServiceTest {
     @Test
     void shouldGetSpecificCard(){
 
-        Card card1 = new Card();
+        YugiohCard card1 = new YugiohCard();
         card1.setName("Blue-Eyes Dark Dragon");
         card1.setAttribute("Dark");
-        card1.setLevel(12);
+        card1.setNormalLevel(12);
         card1.setType("Effect Monster");
         card1.setRace("Dragon");
         card1.setDescription("Hahahahahaha");
-        card1.setAttack(3000);
-        card1.setDefence(2500);
+        card1.setAttack("3000");
+        card1.setDefence("2500");
         card1.setImage("https://i.pinimg.com/originals/e5/3e/5c/e53e5cda7e26ef3569277b41e48cbda0.jpg");
 
         CardRepository repository = Mockito.mock(CardRepository.class);
@@ -53,7 +53,7 @@ public class CardServiceTest {
 
         CardService cardService = new CardService(repository);
 
-        Card actual = cardService.getCard(card1.getId());
+        YugiohCard actual = cardService.getCard(card1.getId());
 
         assertThat(actual).isEqualTo(card1);
     }
@@ -74,28 +74,28 @@ public class CardServiceTest {
     @Test
     void shouldChangeCard(){
 
-        Card card1 = new Card();
+        YugiohCard card1 = new YugiohCard();
         card1.setId("2324");
         card1.setName("Blue-Eyes Dark Dragon");
         card1.setAttribute("Dark");
-        card1.setLevel(12);
+        card1.setNormalLevel(12);
         card1.setType("Effect Monster");
         card1.setRace("Dragon");
         card1.setDescription("Hahahahahaha");
-        card1.setAttack(3000);
-        card1.setDefence(2500);
+        card1.setAttack("3000");
+        card1.setDefence("2500");
         card1.setImage("https://i.pinimg.com/originals/e5/3e/5c/e53e5cda7e26ef3569277b41e48cbda0.jpg");
 
-        Card savedCard = new Card();
+        YugiohCard savedCard = new YugiohCard();
         savedCard.setId("2324");
         savedCard.setName("Blue-Eyes Dark Dragon");
         savedCard.setAttribute("Dark");
-        savedCard.setLevel(10);
+        savedCard.setXyzLevel(10);
         savedCard.setType("Normal Monster");
         savedCard.setRace("Dragon");
         savedCard.setDescription("Hahahahahaha");
-        savedCard.setAttack(3000);
-        savedCard.setDefence(2500);
+        savedCard.setAttack("3000");
+        savedCard.setDefence("2500");
         savedCard.setImage("https://i.pinimg.com/originals/e5/3e/5c/e53e5cda7e26ef3569277b41e48cbda0.jpg");
 
 
@@ -113,28 +113,28 @@ public class CardServiceTest {
 
     @Test
     void shouldDeleteAllCards(){
-        Card card1 = new Card();
+        YugiohCard card1 = new YugiohCard();
         card1.setId("2324");
         card1.setName("Blue-Eyes Dark Dragon");
         card1.setAttribute("Dark");
-        card1.setLevel(12);
+        card1.setNormalLevel(12);
         card1.setType("Effect Monster");
         card1.setRace("Dragon");
         card1.setDescription("Hahahahahaha");
-        card1.setAttack(3000);
-        card1.setDefence(2500);
+        card1.setAttack("3000");
+        card1.setDefence("2500");
         card1.setImage("https://i.pinimg.com/originals/e5/3e/5c/e53e5cda7e26ef3569277b41e48cbda0.jpg");
 
-        Card savedCard = new Card();
+        YugiohCard savedCard = new YugiohCard();
         savedCard.setId("2324");
         savedCard.setName("Blue-Eyes Dark Dragon");
         savedCard.setAttribute("Dark");
-        savedCard.setLevel(10);
+        savedCard.setXyzLevel(10);
         savedCard.setType("Normal Monster");
         savedCard.setRace("Dragon");
         savedCard.setDescription("Hahahahahaha");
-        savedCard.setAttack(3000);
-        savedCard.setDefence(2500);
+        savedCard.setAttack("3000");
+        savedCard.setDefence("2500");
         savedCard.setImage("https://i.pinimg.com/originals/e5/3e/5c/e53e5cda7e26ef3569277b41e48cbda0.jpg");
 
         CardRepository repository = Mockito.mock(CardRepository.class);

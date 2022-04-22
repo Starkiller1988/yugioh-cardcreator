@@ -13,15 +13,15 @@ public class CardService {
 
     private final CardRepository cardRepository;
 
-    public void createCard(Card card){
+    public void createCard(YugiohCard card){
         cardRepository.save(card);
     }
 
-    public Collection<Card> getCards(){
+    public Collection<YugiohCard> getCards(){
         return cardRepository.findAll(Sort.by("name"));
     }
 
-    public Card getCard(String id){
+    public YugiohCard getCard(String id){
         return cardRepository.findById(id).orElse(null);
     }
 
@@ -30,12 +30,13 @@ public class CardService {
     }
 
 
-    public void changeCard(String id, Card changedCard){
-        Card card = cardRepository.findById(id).orElseThrow();
+    public void changeCard(String id, YugiohCard changedCard){
+        YugiohCard card = cardRepository.findById(id).orElseThrow();
 
         card.setName(changedCard.getName());
         card.setAttribute(changedCard.getAttribute());
-        card.setLevel(changedCard.getLevel());
+        card.setNormalLevel(changedCard.getNormalLevel());
+        card.setXyzLevel(changedCard.getXyzLevel());
         card.setType(changedCard.getType());
         card.setDescription(changedCard.getDescription());
         card.setAttack(changedCard.getAttack());

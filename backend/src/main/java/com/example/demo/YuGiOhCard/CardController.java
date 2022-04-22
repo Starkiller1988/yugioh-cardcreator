@@ -18,35 +18,35 @@ public class CardController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Collection<Card> createCard(@RequestBody Card card){
+    public Collection<YugiohCard> createCard(@RequestBody YugiohCard card){
         cardService.createCard(card);
         return cardService.getCards();
     }
 
     @GetMapping
-    public Collection<Card> getCards(){
+    public Collection<YugiohCard> getCards(){
         return cardService.getCards();
     }
 
    @GetMapping("/{id}")
-   public Card getCard(@PathVariable String id){
+   public YugiohCard getCard(@PathVariable String id){
         return cardService.getCard(id);
    }
 
     @PutMapping("/{id}")
-    public Collection<Card> changeCard(@PathVariable String id, @RequestBody Card card){
+    public Collection<YugiohCard> changeCard(@PathVariable String id, @RequestBody YugiohCard card){
         cardService.changeCard(id, card);
         return cardService.getCards();
     }
 
     @DeleteMapping("/{id}")
-    public Collection<Card> deleteCard(@PathVariable String id){
+    public Collection<YugiohCard> deleteCard(@PathVariable String id){
         cardService.deleteCard(id);
         return cardService.getCards();
     }
 
     @DeleteMapping()
-    public Collection<Card> deleteCard(){
+    public Collection<YugiohCard> deleteCard(){
         cardService.deleteCards();
         return cardService.getCards();
     }
