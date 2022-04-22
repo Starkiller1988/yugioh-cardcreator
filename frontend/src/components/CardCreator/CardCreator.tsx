@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./CardCreator.css";
 import { createArrayWithIds } from "../../utils/array";
-import YugiohCard from "../../model";
 
 import normalCard from "../../Media/Cardimages/common.png";
 import effectCard from "../../Media/Cardimages/effect.png";

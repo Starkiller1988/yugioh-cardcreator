@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./App.css"
 import { Route, Routes } from 'react-router-dom'
 import WelcomePage from './components/WelcomePage/WelcomePage';
@@ -9,13 +9,9 @@ import Landingpage from './components/LandingPage/Landingpage';
 import RegisterForm from './components/Authentication/RegisterForm';
 import LoginForm from './components/Authentication/LoginForm';
 import CardCreatorDB from './components/CardCreatorDB/CardCreatorDB';
-import Card from './model'
-
 
 
 function App() {
-
-const [cards, setCards] = useState([] as Array<Card>)
 
 
 return(
