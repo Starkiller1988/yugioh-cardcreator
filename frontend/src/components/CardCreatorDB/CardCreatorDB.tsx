@@ -22,7 +22,7 @@ function CardCreatorDB() {
 
   useEffect(() => {
     fetchAll();
-  }, []);
+  }, );
 
   return (
     <div>

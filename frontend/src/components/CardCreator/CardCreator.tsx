@@ -33,11 +33,7 @@ const cardtypes = [
   xyzCard,
 ];
 
-interface CardfromProps {
-  onCardCreation: (cards: Array<YugiohCard>) => void;
-}
-
-function CardCreator(props: CardfromProps) {
+function CardCreator() {
   const [normalStars, setNormalStars] = useState<{ id: string }[]>([]);
   const [xyzStars, setXyzStars] = useState<{ id: string }[]>([]);
   const [race, setRace] = useState("");
@@ -75,7 +71,7 @@ function CardCreator(props: CardfromProps) {
       }),
     })
       .then((response) => response.json())
-      .then((cardsFromBackend: Array<YugiohCard>) => {
+      .then(() => {
         setName("");
         setAttribute("");
         setNormalStars([]);
@@ -86,7 +82,8 @@ function CardCreator(props: CardfromProps) {
         setDefence("");
         setImg({} as File);
         setCard('');
-        props.onCardCreation(cardsFromBackend);
+        setDescription('');
+        setUrl('');
       });
   };
 

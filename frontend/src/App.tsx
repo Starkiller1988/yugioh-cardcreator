@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import "./App.css"
 import { Route, Routes } from 'react-router-dom'
 import WelcomePage from './components/WelcomePage/WelcomePage';
@@ -27,7 +27,7 @@ return(
         <Route path="/welcome" element={<WelcomePage />}/>
         <Route path="/home" element={<Landingpage />}/>
         <Route path="/database" element={<CardDataBase />}/>
-        <Route path="/creator" element={<CardCreator onCardCreation={setCards} />}/>
+        <Route path="/creator" element={<CardCreator />}/>
         <Route path="/creatordb" element={<CardCreatorDB />}/>
         <Route path="/about" element={<AboutThisApp />}/>
         </Routes>
