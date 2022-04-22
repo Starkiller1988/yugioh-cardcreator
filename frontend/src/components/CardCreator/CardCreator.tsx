@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./CardCreator.css";
 import { createArrayWithIds } from "../../utils/array";
+import YugiohCard from "../../model";
 
 import normalCard from "../../Media/Cardimages/common.png";
 import effectCard from "../../Media/Cardimages/effect.png";
@@ -20,6 +21,7 @@ import wind from "../../Media/Attributes/WIND.png";
 
 import levelstar1 from "../../Media/Level/levelstar.png";
 import levelstar2 from "../../Media/Level/levelstar2.png";
+import { useAuth } from "../Authentication/AuthProvider";
 
 const attributes = [dark, light, divine, earth, fire, wind, water];
 const cardtypes = [
@@ -31,78 +33,123 @@ const cardtypes = [
   xyzCard,
 ];
 
-function CardCreator() {
-  const [showedStars, setShowedStars] = useState<{ id: string }[]>([]);
+interface CardfromProps {
+  onCardCreation: (cards: Array<YugiohCard>) => void;
+}
+
+function CardCreator(props: CardfromProps) {
+  const [normalStars, setNormalStars] = useState<{ id: string }[]>([]);
   const [xyzStars, setXyzStars] = useState<{ id: string }[]>([]);
-  const [showedRace, setShowedRace] = useState(<div></div>);
-  const [showedAttribute, setShowedAttribute] = useState<string | undefined>();
-  const [showedType, setShowedType] = useState(<div>Normal</div>);
-  const [showedCard, setShowedCard] = useState<string | undefined>(normalCard);
+  const [race, setRace] = useState("");
+  const [attribute, setAttribute] = useState<string | undefined>();
+  const [type, setType] = useState("");
+  const [card, setCard] = useState<string | undefined>();
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [attack, setAttack] = useState("");
   const [defence, setDefence] = useState("");
   const [img, setImg] = useState({} as File);
-  const [url, setUrl] = useState('');
+  const [url, setUrl] = useState("");
 
+  const { token } = useAuth();
+
+  const addCard = () => {
+    fetch(`${process.env.REACT_APP_BASE_URL}/cards`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        name: name,
+        attribute: attribute,
+        xyzLevel: xyzStars.length,
+        normalLevel: normalStars.length,
+        cardtype: card,
+        type: type,
+        race: race,
+        description: description,
+        attack: attack,
+        defence: defence,
+        image: url,
+      }),
+    })
+      .then((response) => response.json())
+      .then((cardsFromBackend: Array<YugiohCard>) => {
+        setName("");
+        setAttribute("");
+        setNormalStars([]);
+        setXyzStars([]);
+        setType("");
+        setRace("");
+        setAttack("");
+        setDefence("");
+        setImg({} as File);
+        setCard('');
+        props.onCardCreation(cardsFromBackend);
+      });
+  };
 
   const changeAttribute = (src: string) => {
-    setShowedAttribute(src);
+    setAttribute(src);
   };
 
   const changeType = (types: string) => {
-    setShowedType(<div>{types}</div>);
+    setType(types);
   };
 
   const changeCard = (card: string) => {
-    setShowedCard(card);
+    setCard(card);
   };
 
   const changeRace = (races: string) => {
-    setShowedRace(<div>{races}</div>);
+    setRace(races);
   };
 
   const changeLevel = (stars: number) => {
-    if (showedCard !== xyzCard) setShowedStars(createArrayWithIds(stars));
+    if (card !== xyzCard) setNormalStars(createArrayWithIds(stars));
   };
 
   const changeXyzLevel = (xyzlevel: number) => {
-    if (showedCard === xyzCard) {
+    if (card === xyzCard) {
       setXyzStars(createArrayWithIds(xyzlevel));
     }
   };
 
   const performFileUpload = () => {
-    const formData = new FormData()
-    formData.append('file', img)
-    formData.append('upload_preset', 'yugioh-cardcreator')
+    const formData = new FormData();
+    formData.append("file", img);
+    formData.append("upload_preset", "yugioh-cardcreator");
 
-    fetch('https://api.cloudinary.com/v1_1/yugioh-cardcreator/image/upload',{
-        method: 'POST',
-        body: formData
+    fetch("https://api.cloudinary.com/v1_1/yugioh-cardcreator/image/upload", {
+      method: "POST",
+      body: formData,
     })
-        .then(response => response.json())
-        .then(data => setUrl(data.secure_url))
-}
-  
+      .then((response) => response.json())
+      .then((data) => setUrl(data.secure_url));
+  };
+
   return (
     <div className="body-container">
       <Link to="/home" className="home-link">
         Home
       </Link>
 
+      <div>
+        <Link to="/creatordb" className="db-link">
+          CardCreator Database
+        </Link>
+      </div>
       <div className="attribute_card">
-        {showedAttribute && (
-          <img src={showedAttribute} alt="character Attribute" />
-        )}
+        {attribute && <img src={attribute} alt="character Attribute" />}
       </div>
 
       <div className="cardtype-container">
-        {showedCard && <img src={showedCard} alt="character Card" />}
+        {card && <img src={card} alt="character Card" />}
       </div>
 
       <div className="star-container">
-        {showedStars.map((star) => {
+        {normalStars.map((star) => {
           return <img key={star.id} className="star" src={levelstar1} alt="" />;
         })}
       </div>
@@ -118,7 +165,7 @@ function CardCreator() {
       <div className="name-container">{name}</div>
 
       <div className="race-container">
-        {showedRace}/{showedType}
+        {race}/{type}
       </div>
 
       <div className="attack-container">{attack}</div>
@@ -284,29 +331,34 @@ function CardCreator() {
 
         <div>
           <label className="upload-text">Image:</label>
-          <input className="upload" type="file" onChange={ev => {
-            if(ev.target.files!=null){
+          <input
+            className="upload"
+            type="file"
+            onChange={(ev) => {
+              if (ev.target.files != null) {
                 setImg(ev.target.files[0]);
-            }
-        }}/>
+              }
+            }}
+          />
         </div>
 
-        <div className='uploadButton'>{img.size>0 && <button onClick={performFileUpload} >Upload Image</button>}</div>
+        <div className="uploadButton">
+          {img.size > 0 && (
+            <button onClick={performFileUpload}>Upload Image</button>
+          )}
+        </div>
       </div>
 
       <div className="desc-container">{description}</div>
 
-      <div >
-      {url && <img className="monsterImage" src={url} alt="uploaded pic"/>}
+      <div>
+        {url && <img className="monsterImage" src={url} alt="uploaded pic" />}
       </div>
 
-
-      <div>
-        <button>Save</button>
-      </div>
-
-      <div>
-        <button>Submit</button>
+      <div className="save-container">
+        <button onClick={addCard} className="save-button">
+          Save this Card
+        </button>
       </div>
     </div>
   );

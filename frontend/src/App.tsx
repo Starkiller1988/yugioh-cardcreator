@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./App.css"
 import { Route, Routes } from 'react-router-dom'
 import WelcomePage from './components/WelcomePage/WelcomePage';
@@ -8,10 +8,15 @@ import AboutThisApp from './components/AboutThisApp/AboutThisApp';
 import Landingpage from './components/LandingPage/Landingpage';
 import RegisterForm from './components/Authentication/RegisterForm';
 import LoginForm from './components/Authentication/LoginForm';
+import CardCreatorDB from './components/CardCreatorDB/CardCreatorDB';
+import Card from './model'
 
 
 
 function App() {
+
+const [cards, setCards] = useState([] as Array<Card>)
+
 
 return(
 
@@ -22,7 +27,8 @@ return(
         <Route path="/welcome" element={<WelcomePage />}/>
         <Route path="/home" element={<Landingpage />}/>
         <Route path="/database" element={<CardDataBase />}/>
-        <Route path="/creator" element={<CardCreator />}/>
+        <Route path="/creator" element={<CardCreator onCardCreation={setCards} />}/>
+        <Route path="/creatordb" element={<CardCreatorDB />}/>
         <Route path="/about" element={<AboutThisApp />}/>
         </Routes>
 </div>
