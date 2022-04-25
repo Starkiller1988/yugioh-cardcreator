@@ -31,6 +31,26 @@ https://user-images.githubusercontent.com/90188949/165030483-1f31ced5-e153-4543-
 
 This is the heart of the Application. Here Users can let their fantasy play and create alreaty existing cards or create new cards. It is limited right now just for monster cards but in time Spell, Trap and Linked Monsters will be added.
 
+You can give your card:
+
+- Name
+- Attribute
+- Level
+- Card Type
+- Race
+- ATK
+- DEF
+- Description and
+- upload an image
+
+You can save the Card you created by clicking at the end the "Save this Card" and it will be saved in the Card Creator Database where all cards created will be listed.
+
+https://user-images.githubusercontent.com/90188949/165031510-2ced8897-36af-4b3a-94da-863452336c0d.mov
+
+
+Have fun and if you have any feedback then I am glad for it.
+
+IT´S TIME TO DUEL!
 
 
 
