@@ -15,7 +15,7 @@ function App() {
 
 
 return(
-
+<>
 <div>
         <Routes>
         <Route path="/" element={<LoginForm />} />
@@ -28,7 +28,7 @@ return(
         <Route path="/about" element={<AboutThisApp />}/>
         </Routes>
 </div>
-
+</>
 
 )
 
